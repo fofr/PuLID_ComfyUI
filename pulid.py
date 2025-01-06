@@ -341,7 +341,11 @@ class ApplyPulid:
         )
 
         face_helper.face_parse = None
-        face_helper.face_parse = init_parsing_model(model_name='bisenet', device=device)
+        face_helper.face_parse = init_parsing_model(
+            model_name='bisenet',
+            device=device,
+            model_rootpath=os.path.join(folder_paths.models_dir, "facexlib")
+        )
 
         bg_label = [0, 16, 18, 7, 8, 9, 14, 15]
         cond = []
